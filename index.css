@@ -19,7 +19,7 @@ h2 {
 
 h6 {
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
     color: black;
 }
 
@@ -66,14 +66,13 @@ body {
     padding: 0 20px;
 }
 
-#navbar li a {
+#navbar li a{
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     color: black;
     transition: 0.3s ease;
 }
-
 #navbar li a:hover,
 #navbar li a.active {
     color: lightseagreen;
@@ -81,7 +80,7 @@ body {
 }
 
 #hero {
-    height: 70vh;
+    height: 90vh;
     width: 100%;
     background-size: cover;
     background-image: url("img/hero4.jpg");
@@ -107,7 +106,103 @@ body {
     padding: 15px;
     transition: 0.3s ease;
 }
-
 #hero button:hover {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+#feature {
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#feature .feat-container {
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 5px;
+    margin: 15px 30px;
+}
+#feature .feat-container:hover {
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+#feature .feat-container h6 {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 5px;
+    color: darkgreen;
+    background-color: greenyellow;
+}
+
+#feature .feat-container img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+#products {
+    text-align: center;
+}
+
+#products .product-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#products .product {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    padding: 10px 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    margin: 15px;
+}
+
+#products .product:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+#products .product img{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+#products .product .description {
+    text-align: start;
+    padding: 10px 0px;
+}
+
+#products .product .description span {
+    color: grey;
+    font-size: 12px;
+}
+
+#products .product .description h5 {
+    padding-top: 5px;
+    color: black;
+    font-size: 14px;
+}
+
+#products .product .description h4 {
+    padding-top: 5px;
+    font-weight: 700;
+    font-size: 15px;
+    color: green;
+}
+
+#products .product .fa-cart-plus:hover {
+    color: green;
 }
