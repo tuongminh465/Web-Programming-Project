@@ -33,5 +33,17 @@
     background-color: var(--blue);
 }
 
+.form-container{
+    min-height: 100vh;
+    background-color: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-container form{
+    
+}
 
 
