@@ -1,0 +1,45 @@
+#detail {
+    display: flex;
+    margin-top: 20px;
+}
+
+#detail .product-img {
+    width: 40%;
+    margin-right: 50px;
+}
+
+#detail .product-details {
+    width: 50%;
+    padding-top: 30px;
+}
+
+#detail .product-details h4 {
+    padding: 40px 0 20px 0;
+}
+
+#detail .product-details h2 {
+    font-size: 26px;
+}
+
+#detail .product-details input{
+    width: 50px;
+    height: 50px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#detail .product-details button {
+    width: 100px;
+    height: 50px;
+    background-color: darkcyan;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+#detail .product-details span {
+    line-height: 25px;
+    font-size: 20px;
+}
