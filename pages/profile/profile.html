@@ -7,18 +7,18 @@
     <meta name='viewport' content="width=device-width, initial-scale=1.0" />
     <title>EShop Website</title>
     <link rel="stylesheet" href="../../index.css" />
-    <link rel="stylesheet" href="./register.css">
+    <link rel="stylesheet" href="./login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
 </head>
 
 <body>
-    <div id="register-page">
+    <div id="login-page">
         <button id="home" onclick="window.location.href='../../index.html'">
             <i class="fas fa-arrow-left"></i>
             <span>Go to Home page</span>
         </button>
-        <form id="register-form">
-            <h2 id="title">Join us today!</h2>
+        <form id="login-form">
+            <h2 id="title">Welcome!</h2>
             <div id="username">
                 <label for="username">Username: <span style="color: red;">*</span></label>
                 <input type="text" name="username" placeholder="Enter your username...">
@@ -27,18 +27,10 @@
                 <label for="password">Password: <span style="color: red;">*</span></label>
                 <input type="text" name="password" placeholder="Enter your password...">
             </div>
-            <div id="password">
-                <label for="Email">Email: <span style="color: red;">*</span></label>
-                <input type="email" name="Email" placeholder="Enter your email...">
-            </div>
-            <div id="password">
-                <label for="dob">Date of birth: <span style="color: red;">*</span></label>
-                <input type="date" name="dob" placeholder="Enter your password...">
-            </div>
-            <button id='register-button' type="submit">
+            <button id='login-button' type="submit">
                 Log in
             </button>
-            <p>Already have an account? Log in <a href="../login/login.html">here!</a></p>
+            <p>Don't have an account? Sign up <a href="../register/register.html">here!</a></p>
         </form>
     </div>
 
