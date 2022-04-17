@@ -18,18 +18,14 @@
 #title {
     padding-top: 20px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
-#username {
-    margin-top: 20px;
-    margin-bottom: 30px;
+.field {
+    margin-bottom: 20px;
 }
 
-#password {
-    margin-bottom: 30px;
-}
-
-#username label{
+.field label {
     display: block;
     font-size: 16px;
     font-weight: 600;
@@ -37,27 +33,7 @@
     margin-bottom: 10px;
 }
 
-#username input {
-    display: blocks;
-    width: 450px;
-    height: 40px;
-    margin-left: 25px;
-    font-size: 20px;
-    border-style: solid;
-    border-color: lightgray;
-    border-radius: 10px;
-    padding-left: 10px;
-}
-
-#password label {
-    display: block;
-    font-size: 16px;
-    font-weight: 600;
-    margin-left: 25px;
-    margin-bottom: 10px;
-}
-
-#password input {
+.field input {
     display: blocks;
     width: 450px;
     height: 40px;

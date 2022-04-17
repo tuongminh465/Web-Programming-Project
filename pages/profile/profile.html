@@ -7,32 +7,56 @@
     <meta name='viewport' content="width=device-width, initial-scale=1.0" />
     <title>EShop Website</title>
     <link rel="stylesheet" href="../../index.css" />
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./profile.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
 </head>
 
 <body>
-    <div id="login-page">
-        <button id="home" onclick="window.location.href='../../index.html'">
-            <i class="fas fa-arrow-left"></i>
-            <span>Go to Home page</span>
-        </button>
-        <form id="login-form">
-            <h2 id="title">Welcome!</h2>
-            <div id="username">
-                <label for="username">Username: <span style="color: red;">*</span></label>
-                <input type="text" name="username" placeholder="Enter your username...">
+    <section id="header">
+        <a href="#"><img width="100px" height="100px" src="../../img/logo.png" alt="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../shop/shop.html">Shop</a></li>
+                <li><a href="../login/login.html">Login</a></li>
+                <li><a href="../register/register.html">Register</a></li>
+                <li><a class="active" href="../../pages/profile/">Profile</a></li>
+                <li><a  href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="user-profile" class="section-p1">
+        <div id="left-profile">
+            <img src="../../img/default-pfp.png" alt="">
+            <div>
+                <button>Change avatar</button>
+                <button>Edit bio</button>
             </div>
-            <div id="password">
-                <label for="password">Password: <span style="color: red;">*</span></label>
-                <input type="text" name="password" placeholder="Enter your password...">
+            <div id="bio">
+                <p>This is the user's bio</p>
             </div>
-            <button id='login-button' type="submit">
-                Log in
-            </button>
-            <p>Don't have an account? Sign up <a href="../register/register.html">here!</a></p>
-        </form>
-    </div>
+        </div>
+
+        <div id="right-profile">
+            <div class="user-info">
+                <h4>Full name:</h4>
+                <p>John Doe</p>
+            </div>
+            <div class="user-info">
+                <h4>Date of birth:</h4>
+                <p>01/01/2001</p>
+            </div>
+            <div class="user-info">
+                <h4>Email:</h4>
+                <p>johndoe123@gmail.com</p>
+            </div>
+            <div class="user-info">
+                <h4>Link:</h4>
+                <p>www.google.com</p>
+            </div>
+            <button>Edit profile</button>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
