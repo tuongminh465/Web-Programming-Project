@@ -27,6 +27,10 @@
     border-radius: 200px;
 }
 
+#left-profile #edit-avatar{
+    display: none;
+}
+
 #left-profile div button {
     margin-left: 20px;
     width: 140px;
