@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../../index.css" />
     <link rel="stylesheet" href="./cart.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <script src="./cart.js" async></script>
 </head>
-
 <body>
     <section id="header">
         <a href="#"><img width="100px" height="100px" src="../../img/logo.png" alt="logo"></a>
@@ -37,13 +37,13 @@
                     <td>Subtotal</td>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><a href=""><i class="fas fa-ban"></i></a></td>
+            <tbody class="items-container">
+                <tr class="cart-item">
+                    <td><button class="remove" href=""><i class="fas fa-ban"></i></button></td>
                     <td><img src="../../img/products/product2.jpg" alt=""></td>
                     <td>Corsair Vengeance RGB PRO 16GB (2x8GB) DDR4</td>
-                    <td>$89.99</td>
-                    <td><input type="number" value="1"></td>
+                    <td class="item-price">$89.99</td>
+                    <td><input class="item-quantity" type="number" min="1" value="1"></td>
                     <td>$89.99</td>
                 </tr>
             </tbody>
@@ -56,7 +56,7 @@
             <table>
                 <tr>
                     <td>Cart Total</td>
-                    <td>$89.99</td>
+                    <td class="cart-total">$89.99</td>
                 </tr>
                 <tr>
                     <td>Shipping</td>
@@ -64,7 +64,7 @@
                 </tr>
                 <tr>
                     <td><strong>Total</strong></td>
-                    <td><strong>$89.99</strong></td>
+                    <td><strong class="total-payment">$89.99</strong></td>
                 </tr>
             </table>
             <button>Go to checkout</button>
@@ -114,8 +114,6 @@
             <img src="../../img/payment.jpg" alt="payment-methods">
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>

@@ -6,22 +6,23 @@
 }
 
 #cart table img {
-    width: 70px;
+    width: 100px;
 }
 
 #cart table td:nth-child(1) {
-    width: 2%;
+    width: 4%;
     text-align: center;
 }
 
 #cart table td:nth-child(2) {
-    width: 8%;
+    width: 10%;
     text-align: center;
 }
 
 #cart table td:nth-child(3) {
     width: 35%;
     text-align: center;
+    font-size: 18px;
 }
 
 #cart table td:nth-child(4),
@@ -29,6 +30,7 @@
 #cart table td:nth-child(6) {
     width: 10%;
     text-align: center;
+    font-size: 18px;
 }
 
 #cart table td:nth-child(5) input {
@@ -49,6 +51,18 @@
     text-transform: uppercase;
     font-size: 13px;
     padding: 18px 0;
+}
+
+.remove {
+    width: 70px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s
 }
 
 #cart table tbody tr td {

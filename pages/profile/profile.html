@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../index.css" />
     <link rel="stylesheet" href="./profile.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <script src="./profile.js" async></script>
 </head>
 
 <body>
@@ -25,11 +26,13 @@
             </ul>
         </div>
     </section>
+
     <section id="user-profile" class="section-p1">
         <div id="left-profile">
-            <img src="../../img/default-pfp.png" alt="">
+            <img id="avatar" src="../../img/default-pfp.png" alt="">
             <div>
-                <button>Change avatar</button>
+                <button><label id="label" for="edit-avatar">Change avatar</label></button>
+                <input type="file" id="edit-avatar" name="edit-avatar">
                 <button>Edit bio</button>
             </div>
             <div id="bio">
@@ -56,9 +59,7 @@
             </div>
             <button>Edit profile</button>
         </div>
-    </section>
-
-    <script src="script.js"></script>
+    </section>>
 </body>
 
 </html>
