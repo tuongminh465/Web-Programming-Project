@@ -6,12 +6,36 @@
 
         $name = mysqli_real_escape_string($conn, $_POST['name']); //check input, prevent SQLi    
         $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+        $pass = mysqli_real_escape_string($conn, md5($_POST['password'])); //using MD5 cryptographic protocol
         $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
         $image = $_FILES['image']['name'];
         $image_size = $_FILES['image']['size'];
         $image_tmp_name = $_FILES['image']['tmp_name'];
         $image_folder = 'uploaded_img/'.$image;
+
+        $select = mysqli_query($conn, "SELECT * FROM `user_form` 
+        WHERE email = '$email' AND password = '$pass'") or die('query failed');
+
+        if(mysqli_num_rows($select) > 0){
+            $message[] = 'user already exit';
+        }else{
+            if($pass != $cpass){
+                $message = 'confirm password does not matched!';
+            }elseif($image_size > 2000000){
+                $message = 'images size is too large!';
+            }else{
+                $insert = mysqli_query($conn, "INSERT INTO `user_form`(name, email, password,
+                image) VALUES('$name', '$email', '$pass', '$image')") or die ('query failed');
+
+                if($insert){
+                    move_uploaded_file($image_tmp_name, $image_folder);
+                    $message[] = 'registered successfully!';
+                    header('location:login.php');
+                }else{
+                    $message[] = 'registration failed';
+                }
+            }
+        }
     }
         
 ?>
@@ -29,6 +53,13 @@
     <div class="form-container">
         <form action="" method="post" enctype="multipart/form-data"> <!-- enctype: encoded before submit to server -->
             <h3>register now</h3>
+            <?php
+                if(isset($message)){
+                    foreach($message as $message){
+                        echo '<div class  "message">' .$message. '</div>';
+                    }
+                }
+            ?>
             <input type="text" name="name" placeholder="enter username" class="box" required>
             <input type="email" name="email" placeholder="enter email" class="box" required>
             <input type="password" name="password" placeholder="enter password" class="box" required>
