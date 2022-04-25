@@ -10,8 +10,8 @@
 </head>
 <body>
     <div class="form-container">
-        <h3>register now</h3>
         <form action="" method="post" enctype="multipart/form-data"> <!-- enctype: encoded before submit to server -->
+            <h3>register now</h3>
             <input type="text" name="name" placeholder="enter username" class="box" required>
             <input type="email" name="email" placeholder="enter email" class="box" required>
             <input type="password" name="password" placeholder="enter password" class="box" required>
