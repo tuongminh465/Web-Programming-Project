@@ -1,3 +1,20 @@
+<?php
+
+    include 'config.php';
+
+    if(isset($_POST['submit'])){    
+
+        $name = mysqli_real_escape_string($conn, $_POST['name']); //check input, prevent SQLi    
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+        $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+        $image = $_FILES['image']['name'];
+        $image_size = $_FILES['image']['size'];
+        $image_tmp_name = $_FILES['image']['tmp_name'];
+        $image_folder = 'uploaded_img/'.$image;
+    }
+        
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +33,8 @@
             <input type="email" name="email" placeholder="enter email" class="box" required>
             <input type="password" name="password" placeholder="enter password" class="box" required>
             <input type="password" name="cpassword" placeholder="confirm password" class="box" required>
-            <input type="file" class="box" accept="image=/jpg, image/jpeg, image/png">
-            <input type="submit" value="register now" class="btn">
+            <input type="file" name="image" class="box" accept="image=/jpg, image/jpeg, image/png">
+            <input type="submit" name="submit" value="register now" class="btn">
             <p>Already have an account? <a href="login.php">login now</a></p>
         </form>  
     </div>
