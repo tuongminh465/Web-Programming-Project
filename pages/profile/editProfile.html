@@ -22,7 +22,7 @@
                 <li><a href="../login/login.html">Login</a></li>
                 <li><a href="../register/register.html">Register</a></li>
                 <li><a class="active" href="../../pages/profile/">Profile</a></li>
-                <li><a  href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </section>
@@ -31,33 +31,35 @@
         <div id="left-profile">
             <img id="avatar" src="../../img/default-pfp.png" alt="">
             <div>
-                <button id="edit-avatar-button"><label id="label" for="edit-avatar">Change avatar</label></button>
-                <input type="file" id="edit-avatar" name="edit-avatar">
-                <button id="edit-bio-button">Edit bio</button>
             </div>
             <div id="bio">
-                <p>This is the user's bio</p>
+                <form id="edit-bio-form">
+                    <textarea name="edit-bio-input" id="edit-bio-input" cols="25" rows="10" maxlength="200" placeholder="Enter your bio here..."></textarea>
+                    <button id="save-bio" type="submit">Save bio</button>
+                </form>
             </div>
         </div>
 
         <div id="right-profile">
-            <div class="user-info">
-                <h4>Full name:</h4>
-                <p>John Doe</p>
-            </div>
-            <div class="user-info">
-                <h4>Date of birth:</h4>
-                <p>01/01/2001</p>
-            </div>
-            <div class="user-info">
-                <h4>Email:</h4>
-                <p>johndoe123@gmail.com</p>
-            </div>
-            <div class="user-info">
-                <h4>Link:</h4>
-                <p>www.google.com</p>
-            </div>
-            <button>Edit profile</button>
+            <form action="" id="edit-profile-form">
+                <div class="user-info">
+                    <label for="full-name"><h4>Full name:</h4></label>
+                    <input type="text" name="full-name" placeholder="Enter your name here...">
+                </div>
+                <div class="user-info">
+                    <label for="dob"><h4>Date of birth:</h4></label>
+                    <input name="dob" type="date">
+                </div>
+                <div class="user-info">
+                    <label for="email"><h4>Email:</h4></label>
+                    <input type="email" name="email" placeholder="Enter your email here...">
+                </div>
+                <div class="user-info">
+                    <label for="link"><h4>Link:</h4></label>
+                    <input type="url" name="link" placeholder="Enter your link here...">
+                </div>
+                <button id="save-profile">Save profile</button>
+            </form>
         </div>
     </section>>
 </body>
