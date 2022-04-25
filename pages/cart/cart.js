@@ -6,8 +6,10 @@ else {
 }
 
 function ready() {
+
+    checkNewItem() 
+
     let removeButton = document.getElementsByClassName('remove');
-    console.log(removeButton);
     for (let i = 0; i < removeButton.length; i++) {
         let button = removeButton[i];
         button.addEventListener('click', removeCartItem);
@@ -19,6 +21,51 @@ function ready() {
         input.addEventListener('input', quantityChange);
     }
 }   
+
+function checkNewItem() {
+    const cartItem = JSON.parse(localStorage.getItem('cartItem'));
+    //create table row
+    const tr = document.createElement('tr');
+    tr.classList.add('cart-item');
+    //create remove button cell
+    const button = document.createElement('button');
+    button.classList.add('remove');
+    const icon = document.createElement('i');
+    icon.classList.add("fas");
+    icon.classList.add("fa-ban");
+    const removeCell = document.createElement('td');
+    removeCell.append(button.append(icon));
+    //create img cell
+    const img = document.createElement('img');
+    img.setAttribute('src', cartItem.imgSrc);
+    const imageCell = document.createElement('td');
+    imageCell.append(img);
+    //create name cell
+    const nameCell = document.createElement('td');
+    nameCell.innerHTML = cartItem.productName;
+    //create price cell
+    const priceCell = document.createElement('td');
+    priceCell.classList.add('item-price');
+    priceCell.innerHTML = cartItem.productPrice;
+    //create quantity cell
+    const input = document.createElement('input');
+    input.classList.add('item-quantity');
+    input.setAttribute('type', 'number');
+    input.setAttribute('min', '1');
+    input.setAttribute('value', cartItem.quantity);
+    const inputCell = document.createElement('td')
+    inputCell.append(input);
+    //create total cell
+    const totalCell = document.createElement('td');
+    totalCell.innerHTML = cartItem.productPrice * cartItem.quantity;
+    //append all cell to table row
+    tr.append(removeCell);
+    tr.append(imageCell);
+    tr.append(nameCell);
+    tr.append(priceCell);
+    tr.append(inputCell);
+    tr.append(totalCell);
+}
 
 function quantityChange(event) {
     let input = event.target;
