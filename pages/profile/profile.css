@@ -31,7 +31,8 @@
     display: none;
 }
 
-#left-profile div button {
+#left-profile div #edit-bio-button,
+#left-profile div #edit-avatar-button {
     margin-left: 20px;
     width: 140px;
     height: 25px;
@@ -52,6 +53,33 @@
     /* border-style: solid;
     border-color: black;
     border-width: 1px; */
+}
+
+#left-profile #edit-bio-input{
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 10px;
+    font-size: 20px;
+    max-height: 220px;
+    max-width: 280px ;
+}
+
+#left-profile #edit-bio-form {
+    width: 100%;
+}
+#left-profile #edit-bio-form #save-bio {
+    position: relative;
+    left: 25%;
+    margin-top: 10px;
+    width: 140px;
+    height: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: limegreen;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 #left-profile div p{
@@ -83,12 +111,14 @@
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3);
     margin-left: auto;
     margin-right: auto;
-    padding-top: 10px;
+    padding-top: 30px;
     padding-left: 30px;
 }
 
 #right-profile .user-info{
     margin-bottom: 30px;
+    width: 80%;
+    border-bottom: 5px solid black;
 }
 
 #right-profile .user-info h4{
@@ -98,6 +128,17 @@
 #right-profile .user-info p{
     font-size: 20px;
     color: black;
+}
+
+#right-profile .user-info input {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+}
+
+#right-profile .user-info input:focus {
+    border: 1px solid black;
 }
 
 #right-profile button {
