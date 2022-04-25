@@ -9,34 +9,35 @@
     <link rel="stylesheet" href="../../../index.css" />
     <link rel="stylesheet" href="./detail.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <script src="./detail.js" async></script>
 </head>
 
 <body>
-    <section id="header">
-        <a href="#"><img width="100px" height="100px" src="../../img/logo.png" alt="logo"></a>
+    <section id="header">   
+        <a href="#"><img width="100px" height="100px" src="../../../img/logo.png" alt="logo"></a>
         <div>
             <ul id="navbar">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a class="active" href="../shop/shop.html">Shop</a></li>
-                <li><a href="../login/login.html">Login</a></li>
-                <li><a href="../register/register.html">Register</a></li>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a class="active" href='../shop.html'>Shop</a></li>
+                <li><a href="../../login/login.html">Login</a></li>
+                <li><a href="../../register/register.html">Register</a></li>
                 <li><a href="../../profile/profile.html">Profile</a></li>
-                <li><a href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="../../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </section>
 
     <section id="detail" class="section-p1">
         <div class="product-img">
-            <img src="../../../img/products/product2.jpg" alt="" width="100%" id="main-img">
+            <img id="img" src="../../../img/products/product1.jpg" alt="" width="100%" id="main-img">
         </div>
 
         <div class="product-details">
-            <h6>RAM</h6>
-            <h4>Corsair Vengeance RGB PRO 16GB (2x8GB) DDR4</h4>
-            <h2>$89.99</h2>
-            <input type="number" value="1">
-            <button>Add to Cart</button>
+            <h6>Graphic Processing Unit</h6>
+            <h4 id="name"></h4>
+            <h2 id="price"></h2>
+            <input id="quantity" type="number" value="1" min="1">
+            <button class="cart-button" onclick="addtoCart()">Add to Cart</button>
             <h4>Product description</h4>
             <span>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a sodales purus, sit amet imperdiet ligula. Etiam vel
@@ -92,8 +93,6 @@
             <img src="../../../img/payment.jpg" alt="payment-methods">
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>

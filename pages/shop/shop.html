@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../index.css" />
     <link rel="stylesheet" href="./shop.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <script src="./shop.js" async></script>
 </head>
 
 <body>
@@ -28,48 +29,48 @@
 
     <section id="products" class="section-p1">
         <div class="product-container">
-            <div class="product" onclick="window.location.href='./ProductDetail/detail1.html'">
-                <img src="../../img/products/product1.jpg" alt="">
+            <div class="product" onclick="getProductInfo(0)">
+                <img class="product-img" src="../../img/products/product1.jpg" alt="">
                 <div class="description">
                     <span>MSI</span>
-                    <h5>MSI Geforce RTX™ 3080 GAMING Z TRIO 10GB GDDR6X (LHR)</h5>
-                    <h4>$1,799.99</h4>
+                    <h5 class="product-name">MSI Geforce RTX™ 3080 GAMING Z TRIO 10GB GDDR6X (LHR)</h5>
+                    <h4 class="product-price">$1,799.99</h4>
                 </div>
                 <a href="#">
                     <i style="position: absolute; bottom: 4%; right: 5%; font-size: 25px;" class="fas fa-cart-plus">
                     </i>
                 </a>
             </div>
-            <div class="product" onclick="window.location.href='./ProductDetail/detail2.html'">
-                <img src="../../img/products/product2.jpg" alt="">
+            <div class="product" onclick="getProductInfo(1)">
+                <img class="product-img" src="../../img/products/product2.jpg" alt="">
                 <div class="description">
                     <span>Corsair</span>
-                    <h5>Corsair Vengeance RGB PRO 16GB (2x8GB) DDR4</h5>
-                    <h4>$89.99</h4>
+                    <h5 class="product-name">Corsair Vengeance RGB PRO 16GB (2x8GB) DDR4</h5>
+                    <h4 class="product-price">$89.99</h4>
                 </div>
                 <a href="#">
                     <i style="position: absolute; bottom: 4%; right: 5%; font-size: 25px;" class="fas fa-cart-plus">
                     </i>
                 </a>
             </div>
-            <div class="product" onclick="window.location.href='./ProductDetail/detail3.html'">
-                <img src="../../img/products/product3.jpg" alt="">
+            <div class="product" onclick="getProductInfo(2)">
+                <img class="product-img" src="../../img/products/product3.jpg" alt="">
                 <div class="description">
                     <span>GIGABYTE</span>
-                    <h5>Mainboard GIGABYTE B450 AORUS PRO Socket AM4 ATX</h5>
-                    <h4>$129.99</h4>
+                    <h5 class="product-name">Mainboard GIGABYTE B450 AORUS PRO Socket AM4 ATX</h5>
+                    <h4 class="product-price">$129.99</h4>
                 </div>
                 <a href="#">
                     <i style="position: absolute; bottom: 4%; right: 5%; font-size: 25px;" class="fas fa-cart-plus">
                     </i>
                 </a>
             </div>
-            <div class="product" onclick="window.location.href='./ProductDetail/detail4.html'">
-                <img src="../../img/products/product4.jpg" alt="">
+            <div class="product" onclick="getProductInfo(3)">
+                <img class="product-img" src="../../img/products/product4.jpg" alt="">
                 <div class="description">
                     <span>Intel</span>
-                    <h5>CPU Intel Core i7-10700K</h5>
-                    <h4>$399.99</h4>
+                    <h5 class="product-name">CPU Intel Core i7-10700K</h5>
+                    <h4 class="product-price">$399.99</h4>
                 </div>
                 <a href="#">
                     <i style="position: absolute; bottom: 4%; right: 5%; font-size: 25px;" class="fas fa-cart-plus">
@@ -78,49 +79,49 @@
             </div>
         </div>
 
-        <div class="product-container">
-            <div class="product" onclick="window.location.href='./ProductDetail/detail5.html'">
-                <img src="../../img/products/product5.jpg" alt="">
+        <div class="product-container" onclick="getProductInfo(4)">
+            <div class="product">
+                <img class="product-img" src="../../img/products/product5.jpg" alt="">
                 <div class="description">
                     <span>HyperX</span>
-                    <h5>HyperX FURY Memory Black-8GB Kit*(2x4GB)-DDR4 3200MHz Intel XMP CL16 DIMM</h5>
-                    <h4>$59.99</h4>
+                    <h5 class="product-name">HyperX FURY Memory Black-8GB Kit*(2x4GB)-DDR4 3200MHz Intel XMP CL16 DIMM</h5>
+                    <h4 class="product-price">$59.99</h4>
                 </div>
                 <a href="#">
                     <i style="position: absolute; bottom: 4%; right: 5%; font-size: 25px;" class="fas fa-cart-plus">
                     </i>
                 </a>
             </div>
-            <div class="product" onclick="window.location.href='./ProductDetail/detail8.html'">
-                <img src="../../img/products/product8.jpg" alt="">
+            <div class="product" onclick="getProductInfo(5)">
+                <img class="product-img" src="../../img/products/product8.jpg" alt="">
                 <div class="description">
                     <span>Intel</span>
-                    <h5>Intel Core i9-12900K Processor</h5>
-                    <h4>$1299.99</h4>
+                    <h5 class="product-name">Intel Core i9-12900K Processor</h5>
+                    <h4 class="product-price">$1299.99</h4>
                 </div>
                 <a href="#">
                     <i style="position: absolute; bottom: 4%; right: 5%; font-size: 25px;" class="fas fa-cart-plus">
                     </i>
                 </a>
             </div>
-            <div class="product" onclick="window.location.href='./ProductDetail/detail7.html'">
-                <img src="../../img/products/product7.jpg" alt="">
+            <div class="product" onclick="getProductInfo(6)">
+                <img class="product-img" src="../../img/products/product7.jpg" alt="">
                 <div class="description">
                     <span>AMD</span>
-                    <h5>AMD Radeon 6900 XT DirectX 12.00</h5>
-                    <h4>$999.99</h4>
+                    <h5 class="product-name">AMD Radeon 6900 XT DirectX 12.00</h5>
+                    <h4 class="product-price">$999.99</h4>
                 </div>
                 <a href="#">
                     <i style="position: absolute; bottom: 4%; right: 5%; font-size: 25px;" class="fas fa-cart-plus">
                     </i>
                 </a>
             </div>
-            <div class="product" onclick="window.location.href='./ProductDetail/detail6.html'">
-                <img src="../../img/products/product6.jpg" alt="">
+            <div class="product" onclick="getProductInfo(7)">
+                <img class="product-img" src="../../img/products/product6.jpg" alt="">
                 <div class="description">
                     <span>ASUS</span>
-                    <h5>Mainboard PC ASUS ROG STRIX B560-G GAMING WIFI</h5>
-                    <h4>$159.99</h4>
+                    <h5 class="product-name">Mainboard PC ASUS ROG STRIX B560-G GAMING WIFI</h5>
+                    <h4 class="product-price">$159.99</h4>
                 </div>
                 <a href="#">
                     <i style="position: absolute; bottom: 4%; right: 5%; font-size: 25px;" class="fas fa-cart-plus">
@@ -176,9 +177,9 @@
 
         <div class="col2">
             <h4>Account</h4>
-            <a href="#">Sign up</a>
-            <a href="#">Login</a>
-            <a href="#">My cart</a>
+            <a href="../register/register.html">Sign up</a>
+            <a href="../login/login.html">Login</a>
+            <a href="../cart/cart.html">My cart</a>
             <a href="#">Help</a>
         </div>
 
@@ -187,8 +188,6 @@
             <img src="../../img/payment.jpg" alt="payment-methods">
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
