@@ -9,5 +9,5 @@ function getProductInfo(id) {
         imgSrc,
     }
     localStorage.setItem('productDetail', JSON.stringify(productDetailObject))
-    window.location.href='./ProductDetail/detail.html';
+    window.location.href='./ProductDetail/detail.php';
 }
