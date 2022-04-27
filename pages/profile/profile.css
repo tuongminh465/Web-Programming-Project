@@ -132,14 +132,17 @@
 
 #right-profile .user-info input {
     margin-top: 20px;
+    padding-left: 10px;
+    height: 40px;
     width: 100%;
     font-size: 20px;
     border: none;
-}
-
-#right-profile .user-info input:focus {
     border: 1px solid black;
 }
+
+/* #right-profile .user-info input:focus {
+    
+} */
 
 #right-profile button {
     width: 140px;

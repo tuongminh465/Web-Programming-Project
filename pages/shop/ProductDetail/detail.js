@@ -35,5 +35,5 @@ function addtoCart() {
     }
 
     localStorage.setItem('cartItem', JSON.stringify(cartItemObject))
-    window.location.href='../../cart/cart.html';
+    window.location.href='../../cart/cart.php';
 }

@@ -16,11 +16,11 @@
         <a href="#"><img width="100px" height="100px" src="../../img/logo.png" alt="logo"></a>
         <div>
             <ul id="navbar">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../shop/shop.html">Shop</a></li>
-                <li><a href="../login/login.html">Login</a></li>
-                <li><a href="../register/register.html">Register</a></li>
-                <li><a class="active" href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="../shop/shop.php">Shop</a></li>
+                <li><a href="../login/login.php">Login</a></li>
+                <li><a href="../register/register.php">Register</a></li>
+                <li><a class="active" href="../cart/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </section>

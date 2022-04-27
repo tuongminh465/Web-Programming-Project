@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../index.css" />
     <link rel="stylesheet" href="./profile.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-    <script src="./profile.js" async></script>
+    <script src="./editProfile.js" async></script>
 </head>
 
 <body>
@@ -17,12 +17,12 @@
         <a href="#"><img width="100px" height="100px" src="../../img/logo.png" alt="logo"></a>
         <div>
             <ul id="navbar">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../shop/shop.html">Shop</a></li>
-                <li><a href="../login/login.html">Login</a></li>
-                <li><a href="../register/register.html">Register</a></li>
-                <li><a class="active" href="../../pages/profile/">Profile</a></li>
-                <li><a href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="../shop/shop.php">Shop</a></li>
+                <li><a href="../login/login.php">Login</a></li>
+                <li><a href="../register/register.php">Register</a></li>
+                <li><a class="active" href="../../pages/profile/profile.php">Profile</a></li>
+                <li><a href="../cart/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </section>
@@ -33,15 +33,15 @@
             <div>
             </div>
             <div id="bio">
-                <form id="edit-bio-form">
+                <form id="edit-bio-form" name="edit-bio-form" target='blank_' action="./profile.php" method='POST' onsubmit='saveProfile()'>
                     <textarea name="edit-bio-input" id="edit-bio-input" cols="25" rows="10" maxlength="200" placeholder="Enter your bio here..."></textarea>
-                    <button id="save-bio" type="submit">Save bio</button>
+                    <button onclick='saveProfile()' id="save-bio">Save bio</button>
                 </form>
             </div>
         </div>
 
         <div id="right-profile">
-            <form action="" id="edit-profile-form">
+            <form target='blank_' action="./profile.php" id="edit-profile-form" name='edit-profile-form' method='POST' onsubmit='saveProfile()'>
                 <div class="user-info">
                     <label for="full-name"><h4>Full name:</h4></label>
                     <input type="text" name="full-name" placeholder="Enter your name here...">
@@ -55,13 +55,13 @@
                     <input type="email" name="email" placeholder="Enter your email here...">
                 </div>
                 <div class="user-info">
-                    <label for="link"><h4>Link:</h4></label>
-                    <input type="url" name="link" placeholder="Enter your link here...">
+                    <label for="hobby"><h4>Hobbies:</h4></label>
+                    <input type="text" name="hobby" placeholder="Enter your hobbies here...">
                 </div>
-                <button id="save-profile">Save profile</button>
+                <button id="save-profile" onclick='saveProfile()'>Save profile</button>
             </form>
         </div>
-    </section>>
+    </section>
 </body>
 
 </html>

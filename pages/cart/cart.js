@@ -7,7 +7,9 @@ else {
 
 function ready() {
 
-    addNewItem() 
+    if (localStorage.getItem("cartItem") !== '') {
+        addNewItem() 
+    }
 
     let removeButton = document.getElementsByClassName('remove');
     for (let i = 0; i < removeButton.length; i++) {
@@ -33,6 +35,7 @@ function addNewItem() {
     const button = document.createElement('button');
     button.classList.add('remove');
     button.innerHTML = "Remove";
+    button.addEventListener('click', removeCartItem);
     const removeCell = document.createElement('td');
     removeCell.append(button);
     tr.append(removeCell);
