@@ -18,11 +18,11 @@
         <div>
             <ul id="navbar">
                 <li><a href="../../index.html">Home</a></li>
-                <li><a href="../shop/shop.html">Shop</a></li>
-                <li><a href="../login/login.html">Login</a></li>
-                <li><a href="../register/register.html">Register</a></li>
+                <li><a href="../shop/shop.php">Shop</a></li>
+                <li><a href="../login/login.php">Login</a></li>
+                <li><a href="../register/register.php">Register</a></li>
                 <li><a class="active" href="../../pages/profile/">Profile</a></li>
-                <li><a  href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a  href="../cart/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </section>

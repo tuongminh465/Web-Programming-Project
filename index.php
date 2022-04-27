@@ -15,11 +15,11 @@
             <div>
                 <ul id="navbar">
                     <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="pages/shop/shop.html">Shop</a></li>
-                    <li><a href="pages/login/login.html">Login</a></li>
-                    <li><a href="pages/register/register.html">Register</a></li>
-                    <li><a href="pages/profile/profile.html">Profile</a></li>
-                    <li><a href="pages/cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="./pages/shop/shop.php">Shop</a></li>
+                    <li><a href="./pages/login/login.php">Login</a></li>
+                    <li><a href="./pages/register/register.php">Register</a></li>
+                    <li><a href="./pages/profile/profile.php">Profile</a></li>
+                    <li><a href="./pages/cart/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </div>
         </section>

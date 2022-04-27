@@ -18,11 +18,11 @@
         <div>
             <ul id="navbar">
                 <li><a href="../../index.html">Home</a></li>
-                <li><a class="active" href="../shop/shop.html">Shop</a></li>
-                <li><a href="../login/login.html">Login</a></li>
-                <li><a href="../register/register.html">Register</a></li>
+                <li><a class="active" href="../shop/shop.php">Shop</a></li>
+                <li><a href="../login/login.php">Login</a></li>
+                <li><a href="../register/register.php">Register</a></li>
                 <li><a href="../../pages/profile/">Profile</a></li>
-                <li><a href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="../cart/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </section>
@@ -177,9 +177,9 @@
 
         <div class="col2">
             <h4>Account</h4>
-            <a href="../register/register.html">Sign up</a>
-            <a href="../login/login.html">Login</a>
-            <a href="../cart/cart.html">My cart</a>
+            <a href="../register/register.php">Sign up</a>
+            <a href="../login/login.php">Login</a>
+            <a href="../cart/cart.php">My cart</a>
             <a href="#">Help</a>
         </div>
 
