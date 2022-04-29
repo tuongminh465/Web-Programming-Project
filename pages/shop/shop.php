@@ -79,8 +79,8 @@
             </div>
         </div>
 
-        <div class="product-container" onclick="getProductInfo(4)">
-            <div class="product">
+        <div class="product-container">
+            <div class="product" onclick="getProductInfo(4)">
                 <img class="product-img" src="../../img/products/product5.jpg" alt="">
                 <div class="description">
                     <span>HyperX</span>

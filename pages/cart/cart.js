@@ -6,9 +6,20 @@ else {
 }
 
 function ready() {
-
+    
+    let cartItem = JSON.parse(localStorage.getItem('cartItem'));
+    let productNameCell = document.getElementsByClassName("product-name")
+    let inCart = false;
     if (localStorage.getItem("cartItem") !== '') {
-        addNewItem() 
+        for (let i = 0; i < productNameCell.length; i++) {
+            let productName = productNameCell[i].innerHTML;
+            if (productName === cartItem.productName) {
+                inCart = true;
+            }
+        } 
+        if (inCart === false) {
+            addNewItem();
+        }
     }
 
     let removeButton = document.getElementsByClassName('remove');
