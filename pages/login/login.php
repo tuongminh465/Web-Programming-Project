@@ -1,25 +1,25 @@
 <?php
 
-    // $conn = mysqli_connect('localhost', 'root', 'root', 'user_db') or die('connection failed');
+    $conn = mysqli_connect('localhost', 'root', 'root', 'user_db') or die('connection failed');
 
-    // session_start();
+    session_start();
 
-    // if(isset($_POST['submit'])){    
+    if(isset($_POST['submit'])){    
 
-    //     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    //     $pass = mysqli_real_escape_string($conn, md5($_POST['password'])); //using MD5 cryptographic protocol
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $pass = mysqli_real_escape_string($conn, md5($_POST['password'])); //using MD5 cryptographic protocol
       
-    //     $select = mysqli_query($conn, "SELECT * FROM `user_form` 
-    //     WHERE email = '$email' AND password = '$pass'") or die('query failed');
+        $select = mysqli_query($conn, "SELECT * FROM `user_form` 
+        WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
-    //     if(mysqli_num_rows($select) > 0){
-    //         $row = mysqli_fetch_assoc($select);
-    //         $_SESSION['user_id'] = $row['id'];
-    //         header('location:home.php');
-    //     }else{
-    //         $message[] = 'incorrect email or password!';
-    //     }
-    // }
+        if(mysqli_num_rows($select) > 0){
+            $row = mysqli_fetch_assoc($select);
+            $_SESSION['user_id'] = $row['id'];
+            header('location:home.php');
+        }else{
+            $message[] = 'incorrect email or password!';
+        }
+    }
         
 ?>
 <!DOCTYPE html>
@@ -40,7 +40,7 @@
             <span>Go to Home page</span>
         </button>
         <form action="" method="post" enctype="multipart/form-data"> <!-- enctype: encoded before submit to server -->
-            <h3>login now</h3>
+            <h3>Login now!</h3>
             <?php
                 if(isset($message)){
                     foreach((array) $message as $message){
@@ -48,10 +48,10 @@
                     }
                 }
             ?>
-            <input type="email" name="email" placeholder="enter email" class="box" required>
-            <input type="password" name="password" placeholder="enter password" class="box" required>
+            <input type="email" name="email" placeholder="Enter your email" class="box" required>
+            <input type="password" name="password" placeholder="Enter your password" class="box" required>
             <input type="submit" name="submit" value="register now" class="btn">
-            <p>Don't have an account? <a href="register.php">register now</a></p>
+            <p>Don't have an account? <a href="../register/register.php">Register now!</a></p>
         </form>  
     </div>
 </body>
