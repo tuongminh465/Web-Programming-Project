@@ -33,10 +33,10 @@
                 if(mysqli_num_rows($select) > 0){
                     $fetch = mysqli_fetch_assoc($select);
                 }
-                if($fetch['updated_image'] == ''){
-                    echo '<img src="../img/default_pic.jpg">' ;
+                if($fetch['image'] == ''){
+                    echo '<img src="../../img/default_pic.jpg">' ;
                 }else{
-                    echo 'img src="uploaded_img/'.$fetch['updated_image'].'">' ;
+                    echo 'img src="uploaded_img/'.$fetch['image'].'">' ;
                 }
             ?>
 

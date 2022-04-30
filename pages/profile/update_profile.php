@@ -2,6 +2,48 @@
     $conn = mysqli_connect('localhost', 'root', 'root', 'user_db') or die ('connect failed');
     session_start();
     $user_id = $_SESSION['user_id'];
+
+    if(isset($_POST['update_profile'])){
+        $update_name = mysqli_real_escape_string($conn, $_POST['updated_name']);
+        $update_email = mysqli_real_escape_string($conn, $_POST['updated_email']);
+
+       mysqli_query($conn, "UPDATE `user_form` SET name = '$update_name', email =
+       '$update_email' WHERE id = '$user_id'") or die('query failed');
+
+       $old_pass = $_POST['old_pass'];
+       $update_pass = mysqli_real_escape_string($conn, md5($_POST['update_pass']));
+       $new_pass = mysqli_real_escape_string($conn, md5($_POST['new_pass']));
+       $confirm_pass = mysqli_real_escape_string($conn, md5($_POST['confirm_pass']));
+
+       if(!empty($update_pass) || !empty($new_pass) || !empty($confirm_pass)){
+           if($update_pass != $old_pass){
+               $message[] = 'old password does not matched!';
+           }elseif($new_pass != $confirm_pass){
+                $message[] = 'confirm password does not matched!';
+           }else{
+            mysqli_query($conn, "UPDATE `user_form` SET password = '$confirm_pass' WHERE id = '$user_id'") 
+            or die('query failed');
+                $message[] = 'password updated successfully!';
+           }
+       }
+       $updated_image = $_FILES['updated_image']['name'];
+       $updated_image_size = $_FILES['updated_image']['size'];
+       $updated_images_tmp_name = $_FILES['updated_image']['tmp_name'];
+       $updated_image_folder = 'uploaded_img/';
+
+       if(!empty($updated_image)){
+           if($updated_image_size > 2000000){
+               $message[] = 'image is too large';
+           }else{
+                $image_updated_query = mysqli_query($conn, "UPDATE `user_form` SET image = '$update_image' WHERE id = '$user_id'") 
+                or die('query failed');
+                if($image_updated_query){
+                    move_uploaded_file($updated_images_tmp_name, $updated_image_folder);
+                }
+                $message[] = 'image updated succesfully';
+           }
+       }
+    }
 ?>
 
 
@@ -31,6 +73,13 @@
             }
             ?>
     <form action="" method="POST" enctype="multipart/form-data">
+        <?php
+            if($fetch['updated_image'] == ''){
+                echo '<img src="../img/default_pic.jpg">' ;
+            }else{
+                echo 'img src="uploaded_img/'.$fetch['updated_image'].'">' ;
+            }
+        ?>
         <div class="flex">
             <div class="inputBox">
                 <span>username :</span>
@@ -55,6 +104,8 @@
                 class="box">
             </div>
         </div>
+        <input type="submit" value="update profile" name="update_profile" class="btn">
+        <a href="profilecard.php" class="delete-btn">go back</a>
     </form>
     </div>
 </body>
