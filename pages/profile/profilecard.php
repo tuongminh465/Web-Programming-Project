@@ -9,10 +9,10 @@
     };
 
     if(isset($_GET['logout'])){
-        unset($user_id); //remove var
+        unset($user_id);
         session_destroy();
-        header('location:../login/login.php'); 
-    }
+        header('location:../login/login.php');
+     }
 ?>
 
 <!DOCTYPE html>
