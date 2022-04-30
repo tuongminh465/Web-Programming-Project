@@ -3,12 +3,11 @@
     session_start();
     $user_id = $_SESSION['user_id'];
 
-    if(!isset($user_id)){
-        header('location:../login/login.php');
+    //if user does not login, show login page. If login successful, show profile page
+    if(!isset($user_id)){ 
+        header('location:../login/login.php');  
     }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User profile</title>
+    <link rel="stylesheet" href="../login/style.css">
 </head>
 <body>
     <div class="container">
@@ -27,8 +27,17 @@
                 if(mysqli_num_rows($select) > 0){
                     $fetch = mysqli_fetch_assoc($select);
                 }
+                if($fetch['image'] == ''){
+                    echo '<img src="../img/default_pic.jpg">' ;
+                }else{
+
+                }
             ?>
+
             <h3><?php echo $fetch['name']; ?></h3>
+            <a href="../profile/update_profile.php" class="btn" >Update profile</a>
+            <a href="home.php?logout=<?php echo $user_id; ?>" class="delete-btn">logout</a>
+            <p>new <a href="../login/login.php">login</a> or <a href="../register/register.php">register</a></p>
         </div>
     </div>
 

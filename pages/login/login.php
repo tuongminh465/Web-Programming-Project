@@ -15,7 +15,7 @@
         if(mysqli_num_rows($select) > 0){
             $row = mysqli_fetch_assoc($select);
             $_SESSION['user_id'] = $row['id'];
-            header('location:../profile/profilecard.php');
+            header('location:../profile/profilecard.php');  //redirecting to another url
         }else{
             $message[] = 'incorrect email or password!';
         }
