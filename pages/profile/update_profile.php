@@ -26,28 +26,27 @@
                 $message[] = 'password updated successfully!';
            }
        }
-       $updated_image = $_FILES['updated_image']['name'];
-       $updated_image_size = $_FILES['updated_image']['size'];
-       $updated_images_tmp_name = $_FILES['updated_image']['tmp_name'];
-       $updated_image_folder = 'uploaded_img/';
+        $image = $_FILES['image']['name'];
+        $image_size = $_FILES['image']['size'];
+        $image_tmp_name = $_FILES['image']['tmp_name'];
+        $image_folder = '../../uploaded_img/'.$image;
 
-       if(!empty($updated_image)){
-           if($updated_image_size > 2000000){
-               $message[] = 'image is too large';
-           }else{
-                $image_updated_query = mysqli_query($conn, "UPDATE `user_form` SET image = '$update_image' WHERE id = '$user_id'") 
-                or die('query failed');
-                if($image_updated_query){
-                    move_uploaded_file($updated_images_tmp_name, $updated_image_folder);
-                }
-                $message[] = 'image updated succesfully';
-           }
-       }
+        $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$update_email' AND password = '$update_pass'") 
+        or die('query failed');
+
+        if($image_size > 2000000){
+            $message[] = 'image size is too large!';
+        }else{
+            $insert = mysqli_query($conn, "UPDATE `user_form` SET image = '$image' WHERE id = '$user_id'") 
+            or die('query failed');
+   
+            if($insert){
+               move_uploaded_file($image_tmp_name, $image_folder);
+            }
+            $message[] = 'image updated successfully!';
+        }
     }
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,18 +65,13 @@
             if(mysqli_num_rows($select) > 0){
                 $fetch = mysqli_fetch_assoc($select);
             }
-            if($fetch['updated_image'] == ''){
-                echo '<img src="../img/default_pic.jpg">' ;
-            }else{
-                echo 'img src="uploaded_img/'.$fetch['updated_image'].'">' ;
-            }
             ?>
     <form action="" method="POST" enctype="multipart/form-data">
         <?php
-            if($fetch['updated_image'] == ''){
-                echo '<img src="../img/default_pic.jpg">' ;
+            if($fetch['image'] == ''){
+                echo '<img src="../../img/default_pic.jpg">' ;
             }else{
-                echo 'img src="uploaded_img/'.$fetch['updated_image'].'">' ;
+                echo '<img src="../../uploaded_img/'.$fetch['image'].'">';
             }
         ?>
         <div class="flex">
@@ -91,14 +85,14 @@
                 class="box">
 
                 <span>update your pic :</span>
-                <input type="file" name="updated_image" class="box" accept="image/jpg, img/jpeg, image/png">
+                <input type="file" name="image" class="box" accept="image/jpg, img/jpeg, image/png">
             </div>
             <div class="inputBox">
-                <input type="hidden" name="old_name" value="<?php echo $fetch['password']?>">
+                <input type="hidden" name="old_pass" value="<?php echo $fetch['password']?>">
+                <span>old password :</span>
+                <input type="password" name="update_pass" placeholder="enter previous password" class="box">
                 <span>new password :</span>
-                <input type="password" name="new_pass" placeholder="enter new password"
-                class="box">
-
+                <input type="password" name="new_pass" placeholder="enter new password" class="box">
                 <span>confirm password :</span>
                 <input type="password" name="confirm_pass" placeholder="confirm password"
                 class="box">

@@ -16,8 +16,9 @@
         }else{
             if($pass != $cpass){
                 $message = 'Password does not matched!';
+            /*
             }elseif(!preg_match("/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i",$name)){
-                $message = 'Invalid email address!';
+                $message = 'Invalid email address!'; */
             }else{
                 $insert = mysqli_query($conn, "INSERT INTO `user_form`(name, email, password)
                 VALUES('$name', '$email', '$pass')") or die ('query failed');
