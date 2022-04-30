@@ -6,6 +6,12 @@
     //if user does not login, show login page. If login successful, show profile page
     if(!isset($user_id)){ 
         header('location:../login/login.php');  
+    };
+
+    if(isset($_GET['logout'])){
+        unset($user_id); //remove var
+        session_destroy();
+        header('location:../login/login.php'); 
     }
 ?>
 
@@ -27,10 +33,10 @@
                 if(mysqli_num_rows($select) > 0){
                     $fetch = mysqli_fetch_assoc($select);
                 }
-                if($fetch['image'] == ''){
+                if($fetch['updated_image'] == ''){
                     echo '<img src="../img/default_pic.jpg">' ;
                 }else{
-
+                    echo 'img src="uploaded_img/'.$fetch['updated_image'].'">' ;
                 }
             ?>
 
