@@ -7,6 +7,7 @@
 
 #cart table img {
     width: 100px;
+    height: 100px;
 }
 
 #cart table td:nth-child(1) {

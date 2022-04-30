@@ -1,5 +1,4 @@
 <?php
-
     $conn = mysqli_connect('localhost', 'root', 'root', 'user_db') or die('connection failed');
 
     if(isset($_POST['submit'])){    
@@ -13,25 +12,26 @@
         WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
         if(mysqli_num_rows($select) > 0){
-            $message[] = 'user already exit';
+            $message[] = 'User already exit';
         }else{
             if($pass != $cpass){
-                $message = 'confirm password does not matched!';
+                $message = 'Password does not matched!';
+            }elseif(!preg_match("/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i",$name)){
+                $message = 'Invalid email address!';
             }else{
                 $insert = mysqli_query($conn, "INSERT INTO `user_form`(name, email, password)
                 VALUES('$name', '$email', '$pass')") or die ('query failed');
 
                 if($insert){
-                    $message[] = 'registered successfully!';
+                    $message[] = 'Registered successfully!';
                     header('location:login.php');
                 }else{
-                    $message[] = 'registration failed';
+                    $message[] = 'Registration failed';
                 }
             }
         }
     }
-        
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,11 +41,16 @@
     <title>register</title>
     <!-- css file link -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
 </head>
 <body>
     <div class="form-container">
-        <form action="" method="post" enctype="multipart/form-data"> <!-- enctype: encoded before submit to server -->
-            <h3>register now</h3>
+        <button id="home" onclick="window.location.href='../../index.php'">
+            <i class="fas fa-arrow-left"></i>
+            <span>Go to Home page</span>
+        </button>
+        <form name="form" action="" method="post" enctype="multipart/form-data" onsubmit="return validateForm()"> <!-- enctype: encoded before submit to server -->
+            <h3>Register now!</h3>
             <?php
                 if(isset($message)){
                     foreach((array) $message as $message){
@@ -53,12 +58,12 @@
                     }
                 }
             ?>
-            <input type="text" name="name" placeholder="enter username" class="box" required>
-            <input type="email" name="email" placeholder="enter email" class="box" required>
-            <input type="password" name="password" placeholder="enter password" class="box" required>
-            <input type="password" name="cpassword" placeholder="confirm password" class="box" required>
-            <input type="submit" name="submit" value="register now" class="btn">
-            <p>Already have an account? <a href="../login/login.php">login now</a></p>
+            <input type="text" name="name" placeholder="Enter your username" class="box" required>
+            <input type="email" name="email" placeholder="Enter your email" class="box" required>
+            <input type="password" name="password" placeholder="Enter password" class="box" required>
+            <input type="password" name="cpassword" placeholder="Confirm password" class="box" required>
+            <input type="submit" name="submit" value="Register now" class="btn">
+            <p>Already have an account? <a href="../login/login.php">Login now!</a></p>
         </form>  
     </div>
 </body>

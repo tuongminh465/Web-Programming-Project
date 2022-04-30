@@ -17,12 +17,12 @@
         <a href="#"><img width="100px" height="100px" src="../../img/logo.png" alt="logo"></a>
         <div>
             <ul id="navbar">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a class="active" href="../shop/shop.html">Shop</a></li>
-                <li><a href="../login/login.html">Login</a></li>
-                <li><a href="../register/register.html">Register</a></li>
-                <li><a href="../../pages/profile/">Profile</a></li>
-                <li><a href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="../../index.php">Home</a></li>
+                <li><a class="active" href="../shop/shop.php">Shop</a></li>
+                <li><a href="../login/login.php">Login</a></li>
+                <li><a href="../register/register.php">Register</a></li>
+                <li><a href="../../pages/profile/profile.php">Profile</a></li>
+                <li><a href="../cart/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </section>
@@ -34,7 +34,7 @@
                 <div class="description">
                     <span>MSI</span>
                     <h5 class="product-name">MSI Geforce RTX™ 3080 GAMING Z TRIO 10GB GDDR6X (LHR)</h5>
-                    <h4 class="product-price">$1,799.99</h4>
+                    <h4 class="product-price">$1799.99</h4>
                 </div>
                 <a href="#">
                     <i style="position: absolute; bottom: 4%; right: 5%; font-size: 25px;" class="fas fa-cart-plus">
@@ -79,8 +79,8 @@
             </div>
         </div>
 
-        <div class="product-container" onclick="getProductInfo(4)">
-            <div class="product">
+        <div class="product-container">
+            <div class="product" onclick="getProductInfo(4)">
                 <img class="product-img" src="../../img/products/product5.jpg" alt="">
                 <div class="description">
                     <span>HyperX</span>
@@ -177,9 +177,9 @@
 
         <div class="col2">
             <h4>Account</h4>
-            <a href="../register/register.html">Sign up</a>
-            <a href="../login/login.html">Login</a>
-            <a href="../cart/cart.html">My cart</a>
+            <a href="../register/register.php">Sign up</a>
+            <a href="../login/login.php">Login</a>
+            <a href="../cart/cart.php">My cart</a>
             <a href="#">Help</a>
         </div>
 

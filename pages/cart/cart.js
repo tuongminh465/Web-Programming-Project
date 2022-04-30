@@ -6,8 +6,21 @@ else {
 }
 
 function ready() {
-
-    checkNewItem() 
+    
+    let cartItem = JSON.parse(localStorage.getItem('cartItem'));
+    let productNameCell = document.getElementsByClassName("product-name")
+    let inCart = false;
+    if (localStorage.getItem("cartItem") !== '') {
+        for (let i = 0; i < productNameCell.length; i++) {
+            let productName = productNameCell[i].innerHTML;
+            if (productName === cartItem.productName) {
+                inCart = true;
+            }
+        } 
+        if (inCart === false) {
+            addNewItem();
+        }
+    }
 
     let removeButton = document.getElementsByClassName('remove');
     for (let i = 0; i < removeButton.length; i++) {
@@ -22,55 +35,53 @@ function ready() {
     }
 }   
 
-function checkNewItem() {
+function addNewItem() {
     const cartItem = JSON.parse(localStorage.getItem('cartItem'));
     //create table row
-    const tr = document.createElement('tr');
+    let tr = document.createElement('tr');
+    let tbody = document.getElementsByClassName('items-container')[0];
+    tbody.appendChild(tr);
     tr.classList.add('cart-item');
     //create remove button cell
     const button = document.createElement('button');
     button.classList.add('remove');
-    const icon = document.createElement('i');
-    icon.classList.add("fas");
-    icon.classList.add("fa-ban");
+    button.innerHTML = "Remove";
+    button.addEventListener('click', removeCartItem);
     const removeCell = document.createElement('td');
-    removeCell.append(button.append(icon));
+    removeCell.append(button);
+    tr.append(removeCell);
     //create img cell
-    const img = document.createElement('img');
+    let img = document.createElement('img');
     img.setAttribute('src', cartItem.imgSrc);
-    const imageCell = document.createElement('td');
+    let imageCell = document.createElement('td');
     imageCell.append(img);
+    tr.append(imageCell);
     //create name cell
-    const nameCell = document.createElement('td');
+    let nameCell = document.createElement('td');
     nameCell.innerHTML = cartItem.productName;
+    tr.append(nameCell);
     //create price cell
-    const priceCell = document.createElement('td');
+    let priceCell = document.createElement('td');
+    tr.append(priceCell);
     priceCell.classList.add('item-price');
     priceCell.innerHTML = cartItem.productPrice;
     //create quantity cell
-    const input = document.createElement('input');
+    let input = document.createElement('input');
     input.classList.add('item-quantity');
     input.setAttribute('type', 'number');
     input.setAttribute('min', '1');
     input.setAttribute('value', cartItem.quantity);
-    const inputCell = document.createElement('td')
+    let inputCell = document.createElement('td')
     inputCell.append(input);
-    //create total cell
-    const totalCell = document.createElement('td');
-    totalCell.innerHTML = cartItem.productPrice * cartItem.quantity;
-    //append all cell to table row
-    tr.append(removeCell);
-    tr.append(imageCell);
-    tr.append(nameCell);
-    tr.append(priceCell);
     tr.append(inputCell);
-    tr.append(totalCell);
+
+    updateCartTotal();
 }
 
 function quantityChange(event) {
     let input = event.target;
     if (isNaN(input.value) || input.value <= 0) {
-        console.log('oh no')
+        input.value = 0;
     }
     updateCartTotal();
 }

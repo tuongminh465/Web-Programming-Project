@@ -16,11 +16,11 @@
         <a href="#"><img width="100px" height="100px" src="../../img/logo.png" alt="logo"></a>
         <div>
             <ul id="navbar">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../shop/shop.html">Shop</a></li>
-                <li><a href="../login/login.html">Login</a></li>
-                <li><a href="../register/register.html">Register</a></li>
-                <li><a class="active" href="../cart/cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="../shop/shop.php">Shop</a></li>
+                <li><a href="../login/login.php">Login</a></li>
+                <li><a href="../register/register.php">Register</a></li>
+                <li><a class="active" href="../cart/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </section>
@@ -34,17 +34,15 @@
                     <td>Products</td>
                     <td>Price</td>
                     <td>Quantity</td>
-                    <td>Subtotal</td>
                 </tr>
             </thead>
             <tbody class="items-container">
                 <tr class="cart-item">
-                    <td><button class="remove"><i class="fas fa-ban"></i></button></td>
+                    <td><button class="remove">Remove</button></td>
                     <td><img src="../../img/products/product2.jpg" alt=""></td>
-                    <td>Corsair Vengeance RGB PRO 16GB (2x8GB) DDR4</td>
+                    <td class="product-name">Corsair Vengeance RGB PRO 16GB (2x8GB) DDR4</td>
                     <td class="item-price">$89.99</td>
                     <td><input class="item-quantity" type="number" min="1" value="1"></td>
-                    <td>$89.99</td>
                 </tr>
             </tbody>
         </table>
