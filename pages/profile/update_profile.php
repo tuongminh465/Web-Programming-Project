@@ -76,25 +76,25 @@
         ?>
         <div class="flex">
             <div class="inputBox">
-                <span>username :</span>
+                <span>Username:</span>
                 <input type="text" name="updated_name" value="<?php echo $fetch['name']?>"
                 class="box">
 
-                <span>your email :</span>
+                <span>Email:</span>
                 <input type="email" name="updated_email" value="<?php echo $fetch['email']?>"
                 class="box">
 
-                <span>update your pic :</span>
+                <span>Profile picture:</span>
                 <input type="file" name="image" class="box" accept="image/jpg, img/jpeg, image/png">
             </div>
             <div class="inputBox">
                 <input type="hidden" name="old_pass" value="<?php echo $fetch['password']?>">
-                <span>old password :</span>
-                <input type="password" name="update_pass" placeholder="enter previous password" class="box">
-                <span>new password :</span>
-                <input type="password" name="new_pass" placeholder="enter new password" class="box">
-                <span>confirm password :</span>
-                <input type="password" name="confirm_pass" placeholder="confirm password"
+                <span>Old password :</span>
+                <input type="password" name="update_pass" placeholder="Enter your password" class="box">
+                <span>New password :</span>
+                <input type="password" name="new_pass" placeholder="Enter your new password" class="box">
+                <span>Confirm new password :</span>
+                <input type="password" name="confirm_pass" placeholder="Confirm your new password"
                 class="box">
             </div>
         </div>
