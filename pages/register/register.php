@@ -17,7 +17,7 @@
             if($pass != $cpass){
                 $message = 'Password does not matched!';
 
-            }else if(filter_var(!$email, FILTER_VALIDATE_EMAIL)){
+            }else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $message = 'Invalid email address!'; 
             }
             }else{
