@@ -7,6 +7,7 @@
         <title>EShop Website</title>
         <link rel="stylesheet" href="index.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+        <script src="./index.js" async></script>
     </head>
 
     <body>
@@ -18,8 +19,8 @@
                     <li><a href="./pages/shop/shop.php">Shop</a></li>
                     <li><a href="./pages/login/login.php">Login</a></li>
                     <li><a href="./pages/register/register.php">Register</a></li>
-                    <li><a href="./pages/profile/profile.php">Profile</a></li>
-                    <li><a href="./pages/cart/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a onclick="getSession('./pages/profile/profilecard.php')">Profile</a></li>
+                    <li><a onclick="getSession('./pages/cart/cart.php')"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </div>
         </section>
@@ -154,9 +155,9 @@
 
             <div class="col2">
                 <h4>Account</h4>
-                <a href="#">Sign up</a>
-                <a href="#">Login</a>
-                <a href="#">My cart</a>
+                <a href="./pages/register/register.php">Sign up</a>
+                <a href="./pages/login/login.php">Login</a>
+                <a href="./pages/cart/cart.php">My cart</a>
                 <a href="#">Help</a>
             </div>
 
@@ -165,8 +166,6 @@
                 <img src="img/payment.jpg" alt="payment-methods">
             </div>
         </footer>
-
-        <script src="script.js"></script>
     </body>
 
 </html>
