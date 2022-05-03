@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./detail.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <script src="./detail.js" async></script>
+    <script src="../../../index.js" async></script>
 </head>
 
 <body>
@@ -21,8 +22,8 @@
                 <li><a class="active" href='../shop.php'>Shop</a></li>
                 <li><a href="../../login/login.php">Login</a></li>
                 <li><a href="../../register/register.php">Register</a></li>
-                <li><a href="../../profile/profile.php">Profile</a></li>
-                <li><a href="../../cart/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a onclick="getSession('../../profile/profilecard.php')">Profile</a></li>
+                <li><a onclick="getSession('../../cart/cart.php')"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </section>
@@ -37,7 +38,7 @@
             <h4 id="name"></h4>
             <h2 id="price"></h2>
             <input id="quantity" type="number" value="1" min="1">
-            <button class="cart-button" onclick="addtoCart()">Add to Cart</button>
+            <button class="cart-button" onclick="getSessionForCart()">Add to Cart</button>
             <h4>Product description</h4>
             <span>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a sodales purus, sit amet imperdiet ligula. Etiam vel

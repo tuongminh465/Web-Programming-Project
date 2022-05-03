@@ -42,8 +42,8 @@
 
             <h3><?php echo $fetch['name']; ?></h3>
             <a href="../profile/update_profile.php" class="btn" >Update profile</a>
-            <a href="home.php?logout=<?php echo $user_id; ?>" class="delete-btn">logout</a>
-            <p>new <a href="../login/login.php">login</a> or <a href="../register/register.php">register</a></p>
+            <a href="home.php?logout=<?php echo $user_id; ?>" class="delete-btn">Logout</a>
+            <!-- <p>New <a href="../login/login.php">Login</a> or <a href="../register/register.php">Register</a></p> -->
         </div>
     </div>
 

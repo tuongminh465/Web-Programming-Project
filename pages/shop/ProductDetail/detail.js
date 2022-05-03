@@ -17,6 +17,22 @@ function ready() {
     document.getElementById('img').setAttribute('src', imgSrc);
 }
 
+function getSessionForCart() {
+    const req =  new XMLHttpRequest();
+    req.open("GET", "./pages/login/session-update.php");
+    req.send();
+    req.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if(req.responseText === ''){
+                window.alert("You must be logged in to use this function!");
+            }
+            else {
+                addtoCart()
+            }
+        }
+    }
+};
+
 function addtoCart() {
     const imgSrc = document.getElementById('img').getAttribute('src').substring(3);
     const productName = document.getElementById('name').innerHTML;

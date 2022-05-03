@@ -132,12 +132,12 @@
 
 
     </section>
-
+<!-- 
     <section id="pagination">
         <a href="#">1</a>
         <a href="#">2</a>
         <a href="#"><i class="fas fa-angle-right"></i></a>
-    </section>
+    </section> -->
 
     <section id="banner" class="'section-m1">
         <h4>Repair services</h4>

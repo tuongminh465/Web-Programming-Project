@@ -65,7 +65,7 @@
             if(mysqli_num_rows($select) > 0){
                 $fetch = mysqli_fetch_assoc($select);
             }
-            ?>
+    ?>
     <form action="" method="POST" enctype="multipart/form-data">
         <?php
             if($fetch['image'] == ''){
