@@ -117,10 +117,66 @@
             </div>
         </section>
 
-        <section id="banner" class="'section-m1">
+        <section id="banner" class="section-m1">
             <h4>Repair services</h4>
             <h2>Up to <span>70% Off</span></h2>
             <button class="normal">Explore more</button>
+        </section>
+
+        <section id="review" class="section-m1">
+            <h2>User review</h2>
+            <div class='reviews-container'>
+                <div class="review-container">
+                    <div class='user-info'>
+                        <img src="./img/default-pfp.png" alt="user profile picture">
+                        <div>
+                            <p><b>Name:</b> Tyler One</p>
+                            <p><b>Review score:</b> 3/5 <i style="color: yellow" class="fas fa-star"></i></p>
+                        </div>
+                    </div>
+                    <div class="review-contents">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Proin non ipsum dolor. Duis risus massa, laoreet vitae ex ut, viverra ullamcorper turpis. 
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                        In eu ultrices arcu.</p>
+                    </div>
+                </div>
+                <div class="review-container">
+                    <div class='user-info'>
+                        <img src="./img/default-pfp.png" alt="user profile picture">
+                        <div>
+                            <p><b>Name:</b> Tyler One</p>
+                            <p><b>Review score:</b> 3/5 <i style="color: yellow" class="fas fa-star"></i></p>
+                        </div>
+                    </div>
+                    <div class="review-contents">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Proin non ipsum dolor. Duis risus massa, laoreet vitae ex ut, viverra ullamcorper turpis. 
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                        In eu ultrices arcu.</p>
+                    </div>
+                </div>
+                <div class="review-container">
+                    <div class='user-info'>
+                        <img src="./img/default-pfp.png" alt="user profile picture">
+                        <div>
+                            <p><b>Name:</b> Tyler One</p>
+                            <p><b>Review score:</b> 3/5 <i style="color: yellow" class="fas fa-star"></i></p>
+                        </div>
+                    </div>
+                    <div class="review-contents">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Proin non ipsum dolor. Duis risus massa, laoreet vitae ex ut, viverra ullamcorper turpis. 
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                        In eu ultrices arcu.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="pagination">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#"><i class="fas fa-angle-right"></i></a>
+            </div>
         </section>
 
         <footer class="section-p1">

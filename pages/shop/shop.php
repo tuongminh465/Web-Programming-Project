@@ -21,8 +21,8 @@
                 <li><a class="active" href="../shop/shop.php">Shop</a></li>
                 <li><a href="../login/login.php">Login</a></li>
                 <li><a href="../register/register.php">Register</a></li>
-                <li><a href="../../pages/profile/profile.php">Profile</a></li>
-                <li><a href="../cart/cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a onclick="getSession('../../pages/profile/profile.php')">Profile</a></li>
+                <li><a onclick="getSession('../cart/cart.php')"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
     </section>
@@ -129,15 +129,7 @@
                 </a>
             </div>
         </div>
-
-
     </section>
-<!-- 
-    <section id="pagination">
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#"><i class="fas fa-angle-right"></i></a>
-    </section> -->
 
     <section id="banner" class="'section-m1">
         <h4>Repair services</h4>
