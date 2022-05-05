@@ -1,3 +1,24 @@
+<?php
+    $conn = mysqli_connect('localhost', 'root', 'root', 'user_db') or die('connection failed');
+    
+    $record_per_page = 3;
+    $page = '';
+
+    if (isset($_GET["page"])) {
+        $page = $_GET["page"];
+    }
+    else {
+        $page = 1;
+    }
+    //get which page num is it
+
+    $start_form = ($page - 1)*$record_per_page;
+    //get which record to start fetching
+
+    $select = mysqli_query($conn, "SELECT * FROM `user_review` ORDER BY `review_id`
+        DESC LIMIT '$start_form', '$record_per_page'") or die('query failed');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -126,56 +147,37 @@
         <section id="review" class="section-m1">
             <h2>User review</h2>
             <div class='reviews-container'>
-                <div class="review-container">
-                    <div class='user-info'>
-                        <img src="./img/default-pfp.png" alt="user profile picture">
-                        <div>
-                            <p><b>Name:</b> Tyler One</p>
-                            <p><b>Review score:</b> 3/5 <i style="color: yellow" class="fas fa-star"></i></p>
+                <?php
+                    while($row = mysqli_fetch_array($select)) {
+                ?>
+                    <div class="review-container">
+                        <div class='user-info'>
+                            <img src="./img/default-pfp.png" alt="user profile picture">
+                            <div>
+                                <p><b>Name:</b> <?php echo $row["user_name"] ?></p>
+                                <p><b>Review score:</b> <?php echo $row["user_score"] ?>/5 <i style="color: yellow" class="fas fa-star"></i></p>
+                            </div>
+                        </div>
+                        <div class="review-contents">
+                            <p><?php echo $row["review_content"] ?></p>
                         </div>
                     </div>
-                    <div class="review-contents">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Proin non ipsum dolor. Duis risus massa, laoreet vitae ex ut, viverra ullamcorper turpis. 
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                        In eu ultrices arcu.</p>
-                    </div>
-                </div>
-                <div class="review-container">
-                    <div class='user-info'>
-                        <img src="./img/default-pfp.png" alt="user profile picture">
-                        <div>
-                            <p><b>Name:</b> Tyler One</p>
-                            <p><b>Review score:</b> 3/5 <i style="color: yellow" class="fas fa-star"></i></p>
-                        </div>
-                    </div>
-                    <div class="review-contents">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Proin non ipsum dolor. Duis risus massa, laoreet vitae ex ut, viverra ullamcorper turpis. 
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                        In eu ultrices arcu.</p>
-                    </div>
-                </div>
-                <div class="review-container">
-                    <div class='user-info'>
-                        <img src="./img/default-pfp.png" alt="user profile picture">
-                        <div>
-                            <p><b>Name:</b> Tyler One</p>
-                            <p><b>Review score:</b> 3/5 <i style="color: yellow" class="fas fa-star"></i></p>
-                        </div>
-                    </div>
-                    <div class="review-contents">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Proin non ipsum dolor. Duis risus massa, laoreet vitae ex ut, viverra ullamcorper turpis. 
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                        In eu ultrices arcu.</p>
-                    </div>
-                </div>
+                <?php
+                    }
+                ?>
             </div>
             <div id="pagination">
-                <a href="#">1</a>
-                <a href="#">2</a>
-                <a href="#"><i class="fas fa-angle-right"></i></a>
+                <?php 
+                    $select_page = mysqli_query($conn, "SELECT * FROM `user_review` 
+                        ORDER BY `review_id` DESC '") or die('query failed');
+                    $total_records = mysqli_num_rows($select_page);
+                    $total_pages = ceil($total_records/$record_per_page);
+                    //get total number of pages
+                    for ($i = 1; $i <= $total_pages; $i++){
+                        echo '<a href="index.php?page='.$1.'">'.$1.'</a>'
+                        //print out pagination button
+                    }
+                ?>
             </div>
         </section>
 
@@ -223,5 +225,4 @@
             </div>
         </footer>
     </body>
-
 </html>
