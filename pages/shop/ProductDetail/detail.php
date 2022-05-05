@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./detail.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <script src="./detail.js" async></script>
-    <script src="../../../index.js" async></script>
 </head>
 
 <body>
