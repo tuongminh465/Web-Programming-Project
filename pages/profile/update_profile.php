@@ -46,6 +46,10 @@
             $message[] = 'image updated successfully!';
         }
     }
+    if(isset($_POST['delete_account'])){
+        mysqli_query($conn, "DELETE FROM `user_form` WHERE id = '$user_id'") or die('query failed');
+        header('location:../shop/shop.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -100,6 +104,7 @@
         </div>
         <input type="submit" value="update profile" name="update_profile" class="btn">
         <a href="profilecard.php" class="delete-btn">go back</a>
+        <input type="submit" value="delete account" name="delete_account" class="btn">
     </form>
     </div>
 </body>

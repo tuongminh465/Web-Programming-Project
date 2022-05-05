@@ -25,7 +25,7 @@
 
                 if($insert){
                     $message[] = 'Registered successfully!';
-                    header('location:login.php');
+                    header('location:../login/login.php');
                 }else{
                     $message[] = 'Registration failed';
                 }

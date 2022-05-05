@@ -40,7 +40,7 @@
             <span>Go to Home page</span>
         </button>
         <form action="" method="post" enctype="multipart/form-data"> <!-- enctype: encoded before submit to server -->
-            <h3>Login now!</h3>
+            <h3>Login</h3>
             <?php
                 if(isset($message)){
                     foreach((array) $message as $message){
@@ -50,7 +50,7 @@
             ?>
             <input type="email" name="email" placeholder="Enter your email" class="box" required>
             <input type="password" name="password" placeholder="Enter your password" class="box" required>
-            <input type="submit" name="submit" value="register now" class="btn">
+            <input type="submit" name="submit" value="login" class="btn">
             <p>Don't have an account? <a href="../register/register.php">Register now!</a></p>
         </form>  
     </div>
