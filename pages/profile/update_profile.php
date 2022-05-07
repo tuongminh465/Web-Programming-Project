@@ -1,5 +1,5 @@
 <?php
-    $conn = mysqli_connect('localhost', 'root', 'root', 'user_db') or die ('connect failed');
+    $conn = mysqli_connect('localhost', 'root', '', 'user_db') or die ('connect failed');
     session_start();
     $user_id = $_SESSION['user_id'];
 

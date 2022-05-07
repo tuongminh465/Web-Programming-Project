@@ -1,6 +1,6 @@
 <?php
 
-    $conn = mysqli_connect('localhost', 'root', 'root', 'user_db') or die('connection failed');
+    $conn = mysqli_connect('localhost', 'root', '', 'user_db') or die('connection failed');
 
     session_start();
 
