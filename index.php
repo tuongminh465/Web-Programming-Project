@@ -174,7 +174,7 @@
                     $total_pages = ceil($total_records/$record_per_page);
                     //get total number of pages
                     for ($i = 1; $i <= $total_pages; $i++){
-                        echo '<a href="index.php?page='.$1.'">'.$1.'</a>'
+                        echo '<a href="index.php?page='.$i.'">'.$i.'</a>'
                         //print out pagination button
                     }
                 ?>

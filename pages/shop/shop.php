@@ -21,7 +21,7 @@
                 <li><a class="active" href="../shop/shop.php">Shop</a></li>
                 <li><a href="../login/login.php">Login</a></li>
                 <li><a href="../register/register.php">Register</a></li>
-                <li><a onclick="getSession('../../pages/profile/profile.php')">Profile</a></li>
+                <li><a onclick="getSession('../../pages/profile/profilecard.php')">Profile</a></li>
                 <li><a onclick="getSession('../cart/cart.php')"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </div>
