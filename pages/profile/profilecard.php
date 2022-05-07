@@ -9,7 +9,7 @@
     };
 
     if(isset($_GET['logout'])){
-        unset($user_id);
+        unset($user_id); //xoa phien dang nhap
         session_destroy();
         header('location:../login/login.php');
      }

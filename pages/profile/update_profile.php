@@ -49,6 +49,7 @@
     if(isset($_POST['delete_account'])){
         mysqli_query($conn, "DELETE FROM `user_form` WHERE id = '$user_id'") or die('query failed');
         header('location:../shop/shop.php');
+        unset($user_id); //xoa phien dang nhap
     }
 ?>
 
