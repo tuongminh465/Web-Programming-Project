@@ -261,7 +261,7 @@ button.normal {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 #review h2 {
@@ -316,6 +316,7 @@ button.normal {
     color: white;
     font-weight: 600;
     font-size: 20px;
+    text-transform: capitalize;
 }
 
 #review .review-contents {
@@ -338,6 +339,7 @@ button.normal {
 }
 
 #pagination a {
+    margin-left: 10px;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
