@@ -40,10 +40,10 @@ CREATE TABLE `review` (
 INSERT INTO `review` (`r_id`, `rating`, `content`) VALUES
 (1, 5, 'Beautiful product with much attention to detail'),
 (2, 5, 'Awesome staff!'),
-(3, 5, 'I can’t say enough about these headphones. They’re excellent for gamers'),
+(3, 5, 'I cannot say enough about these headphones. They are excellent for gamers'),
 (4, 5, 'I absolutely love this pc machine! It works so well. '),
 (5, 5, 'Great service.'),
-(6, 5, 'I\'ve bought a brand new mainboard. Very satisfied with this purchase.');
+(6, 5, 'I have bought a brand new mainboard. Very satisfied with this purchase.');
 
 -- --------------------------------------------------------
 

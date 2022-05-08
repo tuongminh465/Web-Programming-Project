@@ -1,22 +1,27 @@
 <?php
-    $conn = mysqli_connect('localhost', 'root', 'root', 'user_db') or die('connection failed');
+    $conn = mysqli_connect('localhost', 'root', '', 'user_db') or die('connection failed');
     
     $record_per_page = 3;
     $page = '';
 
     if (isset($_GET["page"])) {
-        $page = $_GET["page"];
+        $page = intval($_GET["page"]);
     }
     else {
         $page = 1;
     }
     //get which page num is it
 
-    $start_form = ($page - 1)*$record_per_page;
+    $start_from = ($page - 1)*$record_per_page;
     //get which record to start fetching
 
-    $select = mysqli_query($conn, "SELECT * FROM `user_review` ORDER BY `review_id`
-        DESC LIMIT '$start_form', '$record_per_page'") or die('query failed');
+    $select = mysqli_query($conn, 
+        "SELECT `name`, `rating`, `content` 
+        FROM `review` r join `user_form` u
+        ON  r.r_id = u.id
+        ORDER BY `r_id`
+        DESC LIMIT $start_from, $record_per_page") 
+    or die('query failed');
 ?>
 
 <!DOCTYPE html>
@@ -154,12 +159,12 @@
                         <div class='user-info'>
                             <img src="./img/default-pfp.png" alt="user profile picture">
                             <div>
-                                <p><b>Name:</b> <?php echo $row["user_name"] ?></p>
-                                <p><b>Review score:</b> <?php echo $row["user_score"] ?>/5 <i style="color: yellow" class="fas fa-star"></i></p>
+                                <p><b>Name:</b> <?php echo $row["name"] ?></p>
+                                <p><b>Review score:</b> <?php echo $row["rating"] ?>/5 <i style="color: yellow" class="fas fa-star"></i></p>
                             </div>
                         </div>
                         <div class="review-contents">
-                            <p><?php echo $row["review_content"] ?></p>
+                            <p><?php echo $row["content"] ?></p>
                         </div>
                     </div>
                 <?php
@@ -168,13 +173,13 @@
             </div>
             <div id="pagination">
                 <?php 
-                    $select_page = mysqli_query($conn, "SELECT * FROM `user_review` 
-                        ORDER BY `review_id` DESC '") or die('query failed');
+                    $select_page = mysqli_query($conn, "SELECT * FROM `review` 
+                        ORDER BY `r_id` DESC") or die('query failed');
                     $total_records = mysqli_num_rows($select_page);
                     $total_pages = ceil($total_records/$record_per_page);
                     //get total number of pages
                     for ($i = 1; $i <= $total_pages; $i++){
-                        echo '<a href="index.php?page='.$i.'">'.$i.'</a>'
+                        echo '<a href="index.php?page='.$i.' onClick="changePage()">'.$i.'</a>';
                         //print out pagination button
                     }
                 ?>
