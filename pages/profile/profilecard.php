@@ -26,9 +26,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User profile</title>
     <link rel="stylesheet" href="../login/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
 </head>
 <body>
     <div class="container">
+        <button id="home" onclick="window.location.href='../../index.php'">
+            <i class="fas fa-arrow-left"></i>
+            <span>Go to Home page</span>
+        </button>
         <div class="profile">
             <?php
                 $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'")

@@ -68,49 +68,49 @@
 </head>
 <body>
     <div class="update-profile">
-    <?php
-            $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'")
-            or die('query failed');
-            if(mysqli_num_rows($select) > 0){
-                $fetch = mysqli_fetch_assoc($select);
-            }
-    ?>
-    <form action="" method="POST" enctype="multipart/form-data">
         <?php
-            if($fetch['image'] == ''){
-                echo '<img src="../../img/default_pic.jpg">' ;
-            }else{
-                echo '<img src="../../img/uploaded_img/'.$fetch['image'].'">';
-            }
+                $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'")
+                or die('query failed');
+                if(mysqli_num_rows($select) > 0){
+                    $fetch = mysqli_fetch_assoc($select);
+                }
         ?>
-        <div class="flex">
-            <div class="inputBox">
-                <span>Username:</span>
-                <input type="text" name="updated_name" value="<?php echo $fetch['name']?>"
-                class="box">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <?php
+                if($fetch['image'] == ''){
+                    echo '<img src="../../img/default_pic.jpg">' ;
+                }else{
+                    echo '<img src="../../img/uploaded_img/'.$fetch['image'].'">';
+                }
+            ?>
+            <div class="flex">
+                <div class="inputBox">
+                    <span>Username:</span>
+                    <input type="text" name="updated_name" value="<?php echo $fetch['name']?>"
+                    class="box">
 
-                <span>Email:</span>
-                <input type="email" name="updated_email" value="<?php echo $fetch['email']?>"
-                class="box">
+                    <span>Email:</span>
+                    <input type="email" name="updated_email" value="<?php echo $fetch['email']?>"
+                    class="box">
 
-                <span>Profile picture:</span>
-                <input type="file" name="image" class="box" accept="image/jpg, img/jpeg, image/png">
+                    <span>Profile picture:</span>
+                    <input type="file" name="image" class="box" accept="image/jpg, img/jpeg, image/png">
+                </div>
+                <div class="inputBox">
+                    <input type="hidden" name="old_pass" value="<?php echo $fetch['password']?>">
+                    <span>Old password :</span>
+                    <input type="password" name="update_pass" placeholder="Enter your password" class="box">
+                    <span>New password :</span>
+                    <input type="password" name="new_pass" placeholder="Enter your new password" class="box">
+                    <span>Confirm new password :</span>
+                    <input type="password" name="confirm_pass" placeholder="Confirm your new password"
+                    class="box">
+                </div>
             </div>
-            <div class="inputBox">
-                <input type="hidden" name="old_pass" value="<?php echo $fetch['password']?>">
-                <span>Old password :</span>
-                <input type="password" name="update_pass" placeholder="Enter your password" class="box">
-                <span>New password :</span>
-                <input type="password" name="new_pass" placeholder="Enter your new password" class="box">
-                <span>Confirm new password :</span>
-                <input type="password" name="confirm_pass" placeholder="Confirm your new password"
-                class="box">
-            </div>
-        </div>
-        <input type="submit" value="update profile" name="update_profile" class="btn">
-        <a href="profilecard.php" class="delete-btn">go back</a>
-        <input type="submit" value="delete account" name="delete_account" class="btn">
-    </form>
+            <input type="submit" value="update profile" name="update_profile" class="btn">
+            <a href="profilecard.php" class="delete-btn">go back</a>
+            <input type="submit" value="delete account" name="delete_account" class="btn">
+        </form>
     </div>
 </body>
 </html>
