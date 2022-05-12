@@ -123,7 +123,7 @@
 
 .container{
    min-height: 100vh;
-   background-color: var(--light-bg);
+   background-image: url("../../img/login-page.jpg");
    display: flex;
    align-items: center;
    justify-content: center;
@@ -169,7 +169,7 @@
 
 .update-profile{
    min-height: 100vh;
-   background-color: var(--light-bg);
+   background-image: url("../../img//login-page.jpg");
    display: flex;
    align-items: center;
    justify-content: center;
