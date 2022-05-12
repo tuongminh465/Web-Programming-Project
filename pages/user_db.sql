@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 12, 2022 at 03:28 PM
+-- Generation Time: May 12, 2022 at 05:10 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -43,7 +43,8 @@ INSERT INTO `review` (`r_id`, `rating`, `content`, `id`) VALUES
 (2, 5, 'Awesome staff!', 2),
 (4, 5, 'I absolutely love this pc machine! It works so well. ', 4),
 (5, 5, 'Great service.', 5),
-(6, 5, 'I have bought a brand new mainboard. Very satisfied with this purchase.', 6);
+(6, 5, 'I have bought a brand new mainboard. Very satisfied with this purchase.', 6),
+(7, 5, 'Wonderful Store', 7);
 
 -- --------------------------------------------------------
 
@@ -66,10 +67,11 @@ CREATE TABLE `user_form` (
 INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `image`) VALUES
 (1, 'tuan', 'tuan@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'fb.png'),
 (2, 'nam', 'nam@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'tw.png'),
-(4, 'trung', 'trung@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'cs.png'),
-(5, 'hau', 'hau@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'sq.png'),
-(6, 'tin', 'tin@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'scf.png'),
-(7, 'nhat', 'nhat@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'dell.png');
+(4, 'trung', 'trung@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'intel.png'),
+(5, 'hau', 'hau@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'nvidia.png'),
+(6, 'tin', 'tin@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'corsair.png'),
+(7, 'nhat', 'nhat@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'dell.png'),
+(8, 'delete', 'delete@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'delete.png');
 
 --
 -- Indexes for dumped tables
@@ -96,13 +98,13 @@ ALTER TABLE `user_form`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `r_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `r_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user_form`
 --
 ALTER TABLE `user_form`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
