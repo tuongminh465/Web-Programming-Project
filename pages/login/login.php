@@ -1,6 +1,8 @@
 <?php
 
-    $conn = mysqli_connect('localhost', 'root', '', 'user_db') or die('connection failed');
+$conn = mysqli_connect('localhost', 'root', '', 'user_db', '3307') 
+or die('connection failed' . $conn->connect_error); 
+// nho them '3307' do port 3306 trong xampp bị conflict
 
     session_start();
 

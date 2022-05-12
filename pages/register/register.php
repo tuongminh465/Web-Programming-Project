@@ -1,5 +1,6 @@
 <?php
-    $conn = mysqli_connect('localhost', 'root', 'root', 'user_db') or die('connection failed');
+    $conn = mysqli_connect('localhost', 'root', '', 'user_db', '3307') 
+    or die('connection failed' . $conn->connect_error); // nho them '3307' do port 3306 trong xampp bị conflict
 
     if(isset($_POST['submit'])){    
 
@@ -9,7 +10,7 @@
         $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
 
         $select = mysqli_query($conn, "SELECT * FROM `user_form` 
-        WHERE email = '$email' AND password = '$pass'") or die('query failed');
+        WHERE email = '$email' AND password = '$pass'") or die('query failed'. $conn->connect_error);
 
         if(mysqli_num_rows($select) > 0){
             $message[] = 'User already exit';
@@ -21,7 +22,7 @@
                 $message = 'Invalid email address!'; 
             }else{
                 $insert = mysqli_query($conn, "INSERT INTO `user_form`(name, email, password)
-                VALUES('$name', '$email', '$pass')") or die ('query failed');
+                VALUES('$name', '$email', '$pass')") or die ('query failed' . $conn->connect_error);
 
                 if($insert){
                     $message[] = 'Registered successfully!';
