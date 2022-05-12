@@ -2,8 +2,8 @@
 -- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 07, 2022 at 06:46 AM
+-- Host: 127.0.0.1:3307
+-- Generation Time: May 12, 2022 at 03:28 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -30,20 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `review` (
   `r_id` int(100) NOT NULL,
   `rating` int(1) NOT NULL,
-  `content` varchar(300) NOT NULL
+  `content` varchar(300) NOT NULL,
+  `id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `review`
 --
 
-INSERT INTO `review` (`r_id`, `rating`, `content`) VALUES
-(1, 5, 'Beautiful product with much attention to detail'),
-(2, 5, 'Awesome staff!'),
-(3, 5, 'I cannot say enough about these headphones. They are excellent for gamers'),
-(4, 5, 'I absolutely love this pc machine! It works so well. '),
-(5, 5, 'Great service.'),
-(6, 5, 'I have bought a brand new mainboard. Very satisfied with this purchase.');
+INSERT INTO `review` (`r_id`, `rating`, `content`, `id`) VALUES
+(1, 5, 'Beautiful product with much attention to detail', 1),
+(2, 5, 'Awesome staff!', 2),
+(4, 5, 'I absolutely love this pc machine! It works so well. ', 4),
+(5, 5, 'Great service.', 5),
+(6, 5, 'I have bought a brand new mainboard. Very satisfied with this purchase.', 6);
 
 -- --------------------------------------------------------
 
@@ -64,12 +64,12 @@ CREATE TABLE `user_form` (
 --
 
 INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `image`) VALUES
-(1, 'tuan', 'tuan@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'eco-5465425_960_720.png'),
-(2, 'nam', 'nam@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'Can_Tho_University_Logo.png'),
-(3, 'nhat', 'nhat@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'images.png'),
+(1, 'tuan', 'tuan@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'fb.png'),
+(2, 'nam', 'nam@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'tw.png'),
 (4, 'trung', 'trung@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'cs.png'),
 (5, 'hau', 'hau@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'sq.png'),
-(6, 'tin', 'tin@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'scf.png');
+(6, 'tin', 'tin@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'scf.png'),
+(7, 'nhat', 'nhat@gmail.com', 'ee11cbb19052e40b07aac0ca060c23ee', 'dell.png');
 
 --
 -- Indexes for dumped tables
@@ -79,7 +79,8 @@ INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `image`) VALUES
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
-  ADD KEY `r_id_fk` (`r_id`);
+  ADD PRIMARY KEY (`r_id`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `user_form`
@@ -92,10 +93,16 @@ ALTER TABLE `user_form`
 --
 
 --
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `r_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `user_form`
 --
 ALTER TABLE `user_form`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
@@ -105,7 +112,7 @@ ALTER TABLE `user_form`
 -- Constraints for table `review`
 --
 ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`r_id`) REFERENCES `user_form` (`id`);
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user_form` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

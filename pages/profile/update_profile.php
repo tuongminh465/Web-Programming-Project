@@ -11,7 +11,7 @@
         $update_email = mysqli_real_escape_string($conn, $_POST['updated_email']);
 
        mysqli_query($conn, "UPDATE `user_form` SET name = '$update_name', email =
-       '$update_email' WHERE id = '$user_id'") or die('query failed');
+       '$update_email' WHERE id = '$user_id'") or die('query failed'. $conn->connect_error);
 
        $old_pass = $_POST['old_pass'];
        $update_pass = mysqli_real_escape_string($conn, md5($_POST['update_pass']));
@@ -50,8 +50,9 @@
         }
     }
     if(isset($_POST['delete_account'])){
-        mysqli_query($conn, "DELETE FROM `user_form` WHERE id = '$user_id'") or die('query failed');
-        header('location:../shop/shop.php');
+        mysqli_query($conn, "DELETE FROM `review` WHERE id = '$user_id'") or die('query failed' . $conn->connect_error);
+        mysqli_query($conn, "DELETE FROM `user_form` WHERE id = '$user_id'") or die('query failed'. $conn->connect_error);
+        header('location:../../index.php');
         unset($user_id); //xoa phien dang nhap
     }
 ?>
