@@ -25,23 +25,23 @@
                 $message[] = 'confirm password does not matched!';
            }else{
             mysqli_query($conn, "UPDATE `user_form` SET password = '$confirm_pass' WHERE id = '$user_id'") 
-            or die('query failed');
+            or die('query failed' . $conn->connect_error);
                 $message[] = 'password updated successfully!';
            }
        }
         $image = $_FILES['image']['name'];
         $image_size = $_FILES['image']['size'];
         $image_tmp_name = $_FILES['image']['tmp_name'];
-        $image_folder = '../../uploaded_img/'.$image;
+        $image_folder = '../../img/uploaded_img/'.$image;
 
         $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$update_email' AND password = '$update_pass'") 
-        or die('query failed');
+        or die('query failed' . $conn->connect_error);
 
         if($image_size > 2000000){
             $message[] = 'image size is too large!';
         }else{
             $insert = mysqli_query($conn, "UPDATE `user_form` SET image = '$image' WHERE id = '$user_id'") 
-            or die('query failed');
+            or die('query failed' . $conn->connect_error);
    
             if($insert){
                move_uploaded_file($image_tmp_name, $image_folder);
@@ -79,7 +79,7 @@
             if($fetch['image'] == ''){
                 echo '<img src="../../img/default_pic.jpg">' ;
             }else{
-                echo '<img src="../../uploaded_img/'.$fetch['image'].'">';
+                echo '<img src="../../img/uploaded_img/'.$fetch['image'].'">';
             }
         ?>
         <div class="flex">

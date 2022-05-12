@@ -39,7 +39,7 @@
                 if($fetch['image'] == ''){
                     echo '<img src="../../img/default_pic.jpg">' ;
                 }else{
-                    echo '<img src="../../uploaded_img/'.$fetch['image'].'">' ;
+                    echo '<img src="../../img/uploaded_img/'.$fetch['image'].'">' ;
                 }
             ?>
 
