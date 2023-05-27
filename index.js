@@ -18,3 +18,5 @@ function changePage() {
     // const pos = window.innerHeight * 0.8
     window.scrollTo(100, 0)
 }
+
+console.log("Holy fucking shit")
